@@ -67,15 +67,6 @@ def pregunta_01():
         cleaned_keywords = ', '.join(keyword.strip() for keyword in keywords)
         df.at[index, 'principales_palabras_clave'] = cleaned_keywords
 
-    # Asegurarse de que la columna cantidad_de_palabras_clave sea correcta y no tenga valores vacíos
-    if df['cantidad_de_palabras_clave'].isnull().any():
-        df = df.dropna(subset=['cantidad_de_palabras_clave'])
-
-    # Convertir la columna a tipo entero para evitar problemas con el test
-    df['cantidad_de_palabras_clave'] = df['cantidad_de_palabras_clave'].astype(int)
-
-    # Agregar una fila vacía al final del DataFrame
-    df = pd.concat([df, pd.DataFrame([{'cluster': ' ', 'cantidad_de_palabras_clave': ' ', 'porcentaje_de_palabras_clave': ' ', 'principales_palabras_clave': ' '}])], ignore_index=True)
 
     # Mostrar el DataFrame
     print(df)
