@@ -77,10 +77,14 @@ def pregunta_01():
       cleaned_keywords = ', '.join(keyword.strip() for keyword in keywords)
       df.at[index, 'principales_palabras_clave'] = cleaned_keywords
 
+    # Agregar una fila vacía al final del DataFrame
+    df = pd.concat([df, pd.DataFrame([{'cluster': None, 'cantidad_de_palabras_clave': None, 'porcentaje_de_palabras_clave': None, 'principales_palabras_clave': None}])], ignore_index=True)
 
 
 
-    return df
+
+
+    return df.cluster.to_list()
 
     
 if __name__ == "__main__":
