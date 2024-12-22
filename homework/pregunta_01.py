@@ -73,7 +73,7 @@ def pregunta_01():
         df.at[index, 'principales_palabras_clave'] = cleaned_keywords[2:]
 
 
-    return df.principales_palabras_clave.to_list()[0]
+    return df
 
 
     
