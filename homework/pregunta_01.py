@@ -65,7 +65,7 @@ def pregunta_01():
     for index, row in df.iterrows():
         keywords = row['principales_palabras_clave'].replace('\n', ' ').replace('  ', ' ').split(',')
         cleaned_keywords = ', '.join(keyword.strip() for keyword in keywords)
-        df.at[index, 'principales_palabras_clave'] = cleaned_keywords
+        df.at[index, 'principales_palabras_clave'] = cleaned_keywords[2:]
 
 
     # Mostrar el DataFrame
