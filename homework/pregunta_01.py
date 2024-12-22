@@ -40,7 +40,7 @@ def pregunta_01():
         if line[0].isdigit():
             # Guardar la fila actual si ya contiene datos
             if current_row['cluster'] is not None:
-                current_row['principales_palabras_clave'] = current_row['principales_palabras_clave'].replace('\n', ' ').strip(', ')
+                current_row['principales_palabras_clave'] = current_row['principales_palabras_clave'].strip(', ')
                 data.append(current_row)
 
             # Crear una nueva fila
@@ -57,7 +57,7 @@ def pregunta_01():
 
     # Agregar la última fila al conjunto de datos si contiene datos
     if current_row['cluster'] is not None and any(current_row.values()):
-        current_row['principales_palabras_clave'] = current_row['principales_palabras_clave'].replace('\n', ' ').strip(', ')
+        current_row['principales_palabras_clave'] = current_row['principales_palabras_clave'].strip(', ')
         data.append(current_row)
 
     # Crear el DataFrame
@@ -68,12 +68,12 @@ def pregunta_01():
 
     # Limpiar las palabras clave: separar por comas y unificar espacios
     for index, row in df.iterrows():
-        keywords = row['principales_palabras_clave'].replace('\n', ' ').replace('  ', ' ').split(',')
+        keywords = row['principales_palabras_clave'].replace('  ', ' ').split(',')
         cleaned_keywords = ', '.join(keyword.strip() for keyword in keywords)
         df.at[index, 'principales_palabras_clave'] = cleaned_keywords[2:]
 
 
-    return df
+    return df.principales_palabras_clave.to_list()[0]
 
 
     
