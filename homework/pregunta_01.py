@@ -8,6 +8,11 @@ import pandas as pd
 
 
 def pregunta_01():
+    """- El dataframe tiene la misma estructura que el archivo original.
+    - Los nombres de las columnas deben ser en minusculas, reemplazando los
+      espacios por guiones bajos.
+    - Las palabras clave deben estar separadas por coma y con un solo
+      espacio entre palabra y palabra."""
       
     # Ruta del archivo
     file_path = 'files/input/clusters_report.txt'
@@ -68,11 +73,7 @@ def pregunta_01():
         df.at[index, 'principales_palabras_clave'] = cleaned_keywords[2:]
 
 
-    # Mostrar el DataFrame
-    print(df)
-
-
-    return df
+    return df.principales_palabras_clave[0]
 
 
     
