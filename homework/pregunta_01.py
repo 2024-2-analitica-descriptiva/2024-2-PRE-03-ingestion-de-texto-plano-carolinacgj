@@ -72,10 +72,9 @@ def pregunta_01():
     print(df)
 
 
-    return df.cantidad_de_palabras_clave.to_list()
+    return df
 
 
     
 if __name__ == "__main__":
     print(pregunta_01())
-    
