@@ -26,7 +26,7 @@ import pandas as pd
 def pregunta_01():
 
     # Ruta del archivo
-    file_path = r'files\input\clusters_report.txt'
+    file_path = 'files/input/clusters_report.txt'
 
     # Leer el archivo y procesar
     with open(file_path, 'r', encoding='utf-8') as file:
